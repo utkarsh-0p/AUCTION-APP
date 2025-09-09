@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auction App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+  <h1>Auction Item</h1>
+
+
+    <div class="auction-item-container">
+  <!-- Aapka auction content yahan -->
+</div>
+
+
+     <!-- Login Button -->
+        <div class="top-bar">
+        <button class="login-btn">Login</button>
+        </div>
+
+    <h1>💰 Online Auction App</h1>
+
+     <!-- Auction Status (without toggle button) -->
+<div class="status-box" id="statusBox">
+  Status: <span id="auctionStatus">Open</span>
+</div>
+
+
+    <!-- 🏆 Product Section -->
+    <div class="product">
+      <img src="https://img.freepik.com/premium-photo/auction-hammer-sold-out-wooden-hammer_671078-515.jpg"
+           alt="Auction Hammer" width="300">
+      <h2>Antique Vase</h2>
+      <p>Starting Price: ₹500</p>
+    </div>
+
+     <!-- Auction Box -->
+  <div class="auction-box">
+    <input type="number" id="bidAmount" placeholder="Enter your bid" />
+    <button id="placeBidBtn">Place Bid</button>
+  </div>
+
+    <!-- Bid History (directly below auction box) -->
+  <div class="bid-history">
+    <h3>Bid History</h3>
+    <ul id="bidList"></ul>
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="logo">⚡ Auction</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="auction.html">Auction</a></li>
+  </ul>
+</div>
+
+
+<!-- 🔑 Sign In Modal -->
+<div id="signinModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeSignin">&times;</span>
+    <h2>Sign In</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+  </div>
+</div>
+
+<!-- 🆕 Sign Up Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeSignup">&times;</span>
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Register</button>
+  </div>
+</div>
+
+
+<script>
+function openModal() {
+  document.getElementById('loginModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+function login() {
+  // ✅ Simple check: allow any username/password
+  let user = document.getElementById('username').value;
+  if(user.trim() !== '') {
+    alert('Welcome ' + user + '!');
+    closeModal();
+  } else {
+    alert('Please enter username!');
+  }
+}
+
+// Open modal when login button clicked
+document.querySelector('.login-btn').addEventListener('click', openModal);
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
